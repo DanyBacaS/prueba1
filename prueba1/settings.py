@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'usuarios',
+    "usuarios",
 ]
 
 MIDDLEWARE = [
@@ -75,16 +75,15 @@ WSGI_APPLICATION = "prueba1.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prueba1_db',  # Nombre de la base de datos
-        'USER': 'root',  # Usuario de MySQL (ajústalo si tienes otro)
-        'PASSWORD': '111296Da',  # Reemplázalo con tu contraseña
-        'HOST': 'localhost',  # Servidor de MySQL
-        'PORT': '3306',  # Puerto por defecto de MySQL
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "prueba1_db",  # Nombre de la base de datos
+        "USER": "root",  # Usuario de MySQL (ajústalo si tienes otro)
+        "PASSWORD": "111296Da",  # Reemplázalo con tu contraseña
+        "HOST": "localhost",  # Servidor de MySQL
+        "PORT": "3306",  # Puerto por defecto de MySQL
     }
 }
-
 
 
 # Password validation
