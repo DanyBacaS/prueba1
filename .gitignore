@@ -1,0 +1,13 @@
+# Ignorar archivos del sistema y configuración de usuario
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignorar cachés y entornos virtuales
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+.idea/
+.vscode/
