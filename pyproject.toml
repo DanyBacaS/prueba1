@@ -1,103 +1,17 @@
-[tool.poetry]
+[project]
 name = "prueba1"
 version = "0.1.0"
-description = ""
-authors = ["Dany Baca Sanchez <baca.sanchez.dany@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "3.13.1"
-django = "5.1.7"
-djangorestframework = "^3.14.0"
-python-decouple = "^3.8"
-mysqlclient = "2.2.7"
-mypy = "^1.8.0"
-pip = "24.3.1"
-install = "^1.3.5"
-drf-spectacular = "^0.27.1"
-asgiref = "3.8.1"
-pillow = "11.1.0"
-sqlparse = "0.5.3"
-tzdata = "2025.1"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "0.9.10"
-pre-commit = "4.1.0"
-pytest = "^8.0.0"
-conventional-pre-commit = "^3.1.0"
-pytest-django = "^4.8.0"
-factory-boy = "^3.3.0"
-assertpy = "^1.1"
-pycodestyle = "^2.11.1"
-pytest-cov = "^4.1.0"
-black = "25.1.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
-[tool.ruff]
-extend-exclude = ["migrations"]
-indent-width = 4
-line-length = 100
-target-version = "py38"
-
-
-[tool.ruff.lint]
-dummy-variable-rgx = "^_[a-zA-Z0-9_]*$"
-fixable = ["ALL"]
-ignore = [
-       "D100",
-       "D101",
-       "D104",
-       "D105",
-       "D106",
-       "D203",
-       "D212",
-       "ANN101",
-       "PLC0415",
-       "N806",
-       "DJ001",
-       "ANN401",
-       "PLR6301",
-       "DJ008",
-]
-select = [
-       "ANN",
-       "B",
-       "COM",
-       "DJ",
-       "ICN",
-       "T20",
-       "PT",
-       "Q",
-       "ARG",
-       "I",
-       "C90",
-       "N",
-       "PERF",
-       "E", "W",
-       "D",
-       "F",
-       "PL",
-       "UP",
+requires-python = ">=3.13"
+dependencies = [
+    "black>=25.1.0",
+    "django>=5.1.7",
+    "pre-commit>=4.1.0",
+    "ruff>=0.10.0",
 ]
 
-[tool.ruff.format]
-quote-style = "double"
-
-[tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "app.settings"
-addopts = "--cov=. --cov-report=html --cov-report=term --cov-fail-under=80 --cov-branch"
-
-[tool.pytest.ini_options.coverage.run]
-source = ["."]
-
-omit = [
-    "*/asgi.py",
-    "*/wsgi.py",
-    "*/manage.py",
+[dependency-groups]
+dev = [
+    "ruff>=0.10.0",
 ]
-
-[tool.mypy]
-ignore_missing_imports = true
