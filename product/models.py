@@ -23,7 +23,7 @@ class Size(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50)
     categories = models.ManyToManyField(Category)
     featured = models.BooleanField(default=False)
     supplier = models.CharField(max_length=50, blank=True, null=True)
