@@ -1,13 +1,36 @@
+# Ejecuta "pre-commit install" para instalar los hooks.
+
 repos:
+  # Enforce Conventional Commits in commit messages
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.1.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict, --force-scope, feat, fix, chore, test, refactor]
+
+  # Ruff (linter y formateador rápido)
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.9.10"  # Última versión estable de Ruff
+    rev: "v0.9.10"
     hooks:
       - id: ruff
+        args: [--fix, --preview]
       - id: ruff-format
 
+  # Black (formateador de código)
   - repo: https://github.com/psf/black
-    rev: "25.1.0"  # Última versión estable de Black
+    rev: "25.1.0"
     hooks:
       - id: black
 
-
+  # Pre-commit hooks generales
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-json                  # Verifica la sintaxis JSON
+      - id: check-toml                  # Verifica la sintaxis TOML
+      - id: check-yaml                  # Verifica la sintaxis YAML
+      - id: end-of-file-fixer           # Asegura que los archivos terminan con una línea nueva
+      - id: trailing-whitespace         # Elimina espacios en blanco innecesarios
+      # - id: no-commit-to-branch         # Previene commits directos a ramas protegidas (ej. main/master)
+      - id: check-merge-conflict        # Verifica que no haya conflictos de merge sin resolver

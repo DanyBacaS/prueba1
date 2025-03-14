@@ -9,5 +9,3 @@ repos:
     rev: "25.1.0"  # Última versión estable de Black
     hooks:
       - id: black
-
-

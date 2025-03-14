@@ -11,7 +11,7 @@ venv/
 .env
 .idea/
 .vscode/
+uv_env/
 
 # Ignorar base de datos de desarrollo
 db.sqlite3
-

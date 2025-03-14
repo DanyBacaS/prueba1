@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "usuarios",
+    "product",
 ]
 
 MIDDLEWARE = [
@@ -82,7 +82,7 @@ DATABASES = {
         "PASSWORD": "111296Da",  # Reemplázalo con tu contraseña
         "HOST": "localhost",  # Servidor de MySQL
         "PORT": "3306",  # Puerto por defecto de MySQL
-    }
+    },
 }
 
 
