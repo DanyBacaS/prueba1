@@ -1,1 +1,1 @@
-# Register your models here.
+"""Módulo que inicializa el paquete `product`."""

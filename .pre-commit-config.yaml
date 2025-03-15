@@ -3,7 +3,7 @@
 repos:
   # Enforce Conventional Commits in commit messages
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v3.1.0
+    rev: v4.0.0
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
@@ -11,7 +11,7 @@ repos:
 
   # Ruff (linter y formateador rápido)
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.9.10"
+    rev: "v0.11.0"
     hooks:
       - id: ruff
         args: [--fix, --preview]
@@ -25,12 +25,25 @@ repos:
 
   # Pre-commit hooks generales
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v5.0.0
     hooks:
+      - id: check-added-large-files     # Evita agregar archivos grandes (>500KB)
+      - id: check-docstring-first       # Verifica que la docstring esté al inicio de un módulo
       - id: check-json                  # Verifica la sintaxis JSON
+      - id: check-merge-conflict        # Verifica que no haya conflictos de merge sin resolver
       - id: check-toml                  # Verifica la sintaxis TOML
+      - id: check-xml                   # Verifica la sintaxis XML
       - id: check-yaml                  # Verifica la sintaxis YAML
       - id: end-of-file-fixer           # Asegura que los archivos terminan con una línea nueva
+      - id: name-tests-test             # Verifica que los archivos de test sigan el formato correcto
+        args:
+          - --pytest-test-first
+        exclude: 'tests/(factories/.+\.py|.*utils\.py)$'
+      #- id: no-commit-to-branch         # Evita commits en ramas protegidas como main/master
+      - id: requirements-txt-fixer      # Ordena y limpia requirements.txt
       - id: trailing-whitespace         # Elimina espacios en blanco innecesarios
-      # - id: no-commit-to-branch         # Previene commits directos a ramas protegidas (ej. main/master)
-      - id: check-merge-conflict        # Verifica que no haya conflictos de merge sin resolver
+      - id: pretty-format-json          # Formatea archivos JSON automáticamente
+        args:
+          - --autofix
+          - --indent=4
+          - --no-sort-keys

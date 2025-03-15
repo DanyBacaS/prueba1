@@ -15,3 +15,19 @@ dependencies = [
 dev = [
     "ruff>=0.10.0",
 ]
+
+[tool.ruff.lint]
+dummy-variable-rgx = "^_[a-zA-Z0-9_]*$"
+fixable = ["ALL"]
+ignore = [
+       "D203", "D212", "ANN101", "PLC0415", "N806",
+       "DJ001", "ANN401", "PLR6301", "DJ008", "T201"
+]
+select = [
+       "ANN", "B", "COM", "DJ", "ICN", "T20", "PT", "Q",
+       "ARG", "I", "C90", "N", "PERF", "E", "W", "D",
+       "F", "PL", "UP"
+]
+
+[tool.ruff.format]
+quote-style = "double"
