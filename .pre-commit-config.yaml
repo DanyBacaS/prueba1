@@ -11,17 +11,11 @@ repos:
 
   # Ruff (linter y formateador rápido)
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.11.0"
+    rev: "v0.11.1"
     hooks:
       - id: ruff
         args: [--fix, --preview]
       - id: ruff-format
-
-  # Black (formateador de código)
-  - repo: https://github.com/psf/black
-    rev: "25.1.0"
-    hooks:
-      - id: black
 
   # Pre-commit hooks generales
   - repo: https://github.com/pre-commit/pre-commit-hooks

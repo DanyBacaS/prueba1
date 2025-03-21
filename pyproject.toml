@@ -28,6 +28,3 @@ select = [
        "ARG", "I", "C90", "N", "PERF", "E", "W", "D",
        "F", "PL", "UP"
 ]
-
-[tool.ruff.format]
-quote-style = "double"
